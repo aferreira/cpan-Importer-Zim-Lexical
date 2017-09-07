@@ -3,6 +3,12 @@ Release history for Importer-Zim-Lexical
 
 {{$NEXT}}
 
+v0.2     2017-09-06 18:30:45-07:00 America/Los_Angeles
+
+    - Depend on Importer::Zim::Base 0.2.0, which brings
+    - Support to "use IMPORTER MODULE => { -version => VERSION }...
+    - Support to "use IMPORTER MODULE => :TAG"
+
 v0.1     2017-09-05 17:50:07-07:00 America/Los_Angeles
 
     - Initial version
