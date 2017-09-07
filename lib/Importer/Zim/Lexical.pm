@@ -4,6 +4,7 @@ package Importer::Zim::Lexical;
 use 5.018;
 BEGIN {
     require Importer::Zim::Base;
+    Importer::Zim::Base->VERSION('0.2.0');
     our @ISA = qw(Importer::Zim::Base);
 }
 
@@ -35,8 +36,10 @@ Importer::Zim::Lexical - Import functions with lexical scope
 =head1 SYNOPSIS
 
     use Importer::Zim::Lexical 'Scalar::Util' => 'blessed';
-    use Importer::Zim::Lexical 'Scalar::Util' => 'blessed' =>
-      { -as => 'typeof' };
+    use Importer::Zim::Lexical 'Scalar::Util' =>
+      ( 'blessed' => { -as => 'typeof' } );
+
+    use Importer::Zim::Lexical 'Mango::BSON' => ':bson';
 
     use Importer::Zim::Lexical 'Foo' => { -version => '3.0' } => 'foo';
 
