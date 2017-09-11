@@ -3,6 +3,8 @@ Release history for Importer-Zim-Lexical
 
 {{$NEXT}}
 
+    - Use Sub::Inject
+
 v0.2     2017-09-06 18:30:45-07:00 America/Los_Angeles
 
     - Depend on Importer::Zim::Base 0.2.0, which brings

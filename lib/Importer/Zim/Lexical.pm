@@ -2,27 +2,22 @@
 package Importer::Zim::Lexical;
 
 use 5.018;
+
 BEGIN {
     require Importer::Zim::Base;
     Importer::Zim::Base->VERSION('0.2.0');
     our @ISA = qw(Importer::Zim::Base);
 }
 
-use Carp ();
-use Exporter::Lexical ();
+use Carp        ();
+use Sub::Inject ();
 
 sub import {
     my $class = shift;
 
-say "$class->import(@_)"; # XXX
+    say "$class->import(@_)";    # XXX
     my @exports = $class->_prepare_args(@_);
-    for (@exports) {
-        my ( $export, $sub ) = @{$_}{qw(export code)};
-        Exporter::Lexical::lexical_import( $export, $sub );
-    }
-
-    # Same hack of Exporter::Lexical::import
-    Exporter::Lexical::_lex_stuff(';1;');
+    Sub::Inject::sub_inject( map { @{$_}{qw(export code)} } @exports );
 }
 
 1;
