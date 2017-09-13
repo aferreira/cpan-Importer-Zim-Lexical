@@ -9,7 +9,6 @@ BEGIN {
     our @ISA = qw(Importer::Zim::Base);
 }
 
-use Carp        ();
 use Sub::Inject ();
 
 use constant DEBUG => $ENV{IMPORTER_ZIM_DEBUG} || 0;
