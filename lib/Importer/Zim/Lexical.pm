@@ -12,10 +12,12 @@ BEGIN {
 use Carp        ();
 use Sub::Inject ();
 
+use constant DEBUG => $ENV{IMPORTER_ZIM_DEBUG} || 0;
+
 sub import {
     my $class = shift;
 
-    say "$class->import(@_)";    # XXX
+    warn "$class->import(@_)\n" if DEBUG;
     my @exports = $class->_prepare_args(@_);
     Sub::Inject::sub_inject( map { @{$_}{qw(export code)} } @exports );
 }
@@ -37,5 +39,16 @@ Importer::Zim::Lexical - Import functions with lexical scope
     use Importer::Zim::Lexical 'Mango::BSON' => ':bson';
 
     use Importer::Zim::Lexical 'Foo' => { -version => '3.0' } => 'foo';
+
+=head1 DEBUGGING
+
+You can set the C<IMPORTER_ZIM_DEBUG> environment variable
+for get some diagnostics information printed to C<STDERR>.
+
+    IMPORTER_ZIM_DEBUG=1
+
+=head1 SEE ALSO
+
+L<Importer::Zim>
 
 =cut
