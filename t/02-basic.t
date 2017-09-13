@@ -6,6 +6,8 @@ package M1;
 
 BEGIN { $INC{'M1.pm'} = __FILE__ }
 
+BEGIN { our @EXPORT_OK = qw(f1 f2 f3); }
+
 sub f1 { }
 sub f2 { }
 sub f3 { }
