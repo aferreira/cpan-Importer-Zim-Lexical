@@ -1,6 +1,8 @@
 
 package Importer::Zim::Lexical;
 
+# ABSTRACT: Import functions with lexical scope
+
 use 5.018;
 
 BEGIN {
@@ -24,10 +26,6 @@ sub import {
 1;
 
 =encoding utf8
-
-=head1 NAME
-
-Importer::Zim::Lexical - Import functions with lexical scope
 
 =head1 SYNOPSIS
 
