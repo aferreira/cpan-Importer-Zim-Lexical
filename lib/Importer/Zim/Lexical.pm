@@ -37,6 +37,12 @@ sub import {
 
     use Importer::Zim::Lexical 'Foo' => { -version => '3.0' } => 'foo';
 
+=head1 DESCRIPTION
+
+   "It's... INCREDIBLE! There's stuff down here I've never even
+    dreamed of! I'm gonna try to blow it up."
+     – Dib
+
 =head1 DEBUGGING
 
 You can set the C<IMPORTER_ZIM_DEBUG> environment variable
