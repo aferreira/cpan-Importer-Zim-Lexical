@@ -43,6 +43,9 @@ sub import {
     dreamed of! I'm gonna try to blow it up."
      – Dib
 
+This is a backend for L<Importer::Zim> which gives lexical scope
+to imported subroutines.
+
 =head1 DEBUGGING
 
 You can set the C<IMPORTER_ZIM_DEBUG> environment variable
