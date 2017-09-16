@@ -7,7 +7,7 @@ use 5.018;
 
 BEGIN {
     require Importer::Zim::Base;
-    Importer::Zim::Base->VERSION('0.3.0');
+    Importer::Zim::Base->VERSION('0.4.0');
     our @ISA = qw(Importer::Zim::Base);
 }
 
