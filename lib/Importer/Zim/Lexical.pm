@@ -37,7 +37,7 @@ sub import {
 
     use Importer::Zim::Lexical 'Foo' => { -version => '3.0' } => 'foo';
 
-    use zim 'Krazy::Taco' => qw(tacos burritos poop);
+    use Importer::Zim::Lexical 'Krazy::Taco' => qw(tacos burritos poop);
 
 =head1 DESCRIPTION
 
