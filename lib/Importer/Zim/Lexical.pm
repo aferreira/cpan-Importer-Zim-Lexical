@@ -1,7 +1,7 @@
 
 package Importer::Zim::Lexical;
 
-# ABSTRACT: Import functions with lexical scope
+# ABSTRACT: Import functions as lexical subroutines
 
 use 5.018;
 
