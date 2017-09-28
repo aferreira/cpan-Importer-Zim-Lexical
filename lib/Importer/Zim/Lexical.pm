@@ -20,7 +20,9 @@ sub import {
 
     warn "$class->import(@_)\n" if DEBUG;
     my @exports = $class->_prepare_args(@_);
-    Sub::Inject::sub_inject( map { @{$_}{qw(export code)} } @exports );
+
+    @_ = map { @{$_}{qw(export code)} } @exports;
+    goto &Sub::Inject::sub_inject;
 }
 
 1;

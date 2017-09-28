@@ -3,6 +3,9 @@ Release history for Importer-Zim-Lexical
 
 {{$NEXT}}
 
+    - [FIX] Inject subroutines into the proper lexical context
+      of the caller (think warnings, hints, etc.)
+
 v0.6     2017-09-21 18:32:52-07:00 America/Los_Angeles
 
     - Depend on Importer::Zim::Base 0.5.0
