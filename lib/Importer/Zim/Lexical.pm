@@ -44,7 +44,7 @@ sub import {
 =head1 DESCRIPTION
 
    "It's... INCREDIBLE! There's stuff down here I've never even
-    dreamed of! I'm gonna try to blow it up."
+   dreamed of! I'm gonna try to blow it up."
      – Dib
 
 This is a backend for L<Importer::Zim> which gives lexical scope
