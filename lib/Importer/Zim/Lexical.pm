@@ -13,19 +13,19 @@ BEGIN {
     our @ISA = qw(Importer::Zim::Base);
 }
 
-use Importer::Zim::Utils 0.7.0 qw(DEBUG);
+use Importer::Zim::Utils 0.7.0 qw(DEBUG carp);
 
 sub import {
     my $class = shift;
 
-    warn "$class->import(@_)\n" if DEBUG;
+    carp "$class->import(@_)" if DEBUG;
     my @exports = $class->_prepare_args(@_);
 
     @_ = map { @{$_}{qw(export code)} } @exports;
     goto &Sub::Inject::sub_inject;
 }
 
-no Importer::Zim::Utils qw(DEBUG);
+no Importer::Zim::Utils qw(DEBUG carp);
 
 1;
 
