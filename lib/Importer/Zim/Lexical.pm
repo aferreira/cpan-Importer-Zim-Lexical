@@ -5,15 +5,15 @@ package Importer::Zim::Lexical;
 
 use 5.018;
 
+use Sub::Inject 0.3.0 ();    # load before Importer::Zim::Utils
+
 BEGIN {
     require Importer::Zim::Base;
     Importer::Zim::Base->VERSION('0.5.0');
     our @ISA = qw(Importer::Zim::Base);
 }
 
-use Sub::Inject ();
-
-use constant DEBUG => $ENV{IMPORTER_ZIM_DEBUG} || 0;
+use Importer::Zim::Utils 0.7.0 qw(DEBUG);
 
 sub import {
     my $class = shift;
@@ -24,6 +24,8 @@ sub import {
     @_ = map { @{$_}{qw(export code)} } @exports;
     goto &Sub::Inject::sub_inject;
 }
+
+no Importer::Zim::Utils qw(DEBUG);
 
 1;
 
