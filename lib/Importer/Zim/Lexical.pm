@@ -5,7 +5,7 @@ package Importer::Zim::Lexical;
 
 use 5.018;
 
-use Importer::Zim::Base 0.5.0;
+use Importer::Zim::Base 0.8.0;
 BEGIN { our @ISA = qw(Importer::Zim::Base); }
 
 use Sub::Inject 0.2.0;
