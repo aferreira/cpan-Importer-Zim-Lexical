@@ -5,11 +5,11 @@ package Importer::Zim::Lexical;
 
 use 5.018;
 
-use Sub::Inject 0.3.0 ();    # load before I::Z::Utils
-use Importer::Zim::Utils 0.7.0 qw(DEBUG carp);
-
 use Importer::Zim::Base 0.5.0;
 BEGIN { our @ISA = qw(Importer::Zim::Base); }
+
+use Sub::Inject 0.2.0;
+use Importer::Zim::Utils 0.8.0 qw(DEBUG carp);
 
 sub import {
     my $class = shift;
