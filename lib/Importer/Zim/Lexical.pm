@@ -21,6 +21,11 @@ sub import {
     goto &Sub::Inject::sub_inject;
 }
 
+sub export_to {
+    shift;
+    goto &Sub::Inject::sub_inject;
+}
+
 no Importer::Zim::Utils qw(DEBUG carp);
 
 1;

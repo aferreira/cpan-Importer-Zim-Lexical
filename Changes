@@ -3,6 +3,8 @@ Release history for Importer-Zim-Lexical
 
 {{$NEXT}}
 
+    - export_to() function
+
 v0.8     2017-09-29 11:29:07-07:00 America/Los_Angeles
 
     - Produce DEBUG message with carp()
