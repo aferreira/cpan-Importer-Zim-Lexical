@@ -5,28 +5,17 @@ package Importer::Zim::Lexical;
 
 use 5.018;
 
-use Importer::Zim::Base 0.8.0;
-BEGIN { our @ISA = qw(Importer::Zim::Base); }
-
-use Sub::Inject 0.2.0;
-use Importer::Zim::Utils 0.8.0 qw(DEBUG carp);
+use Sub::Inject 0.2.0 ();
 
 sub import {
-    my $class = shift;
-
-    carp "$class->import(@_)" if DEBUG;
-    my @exports = $class->_prepare_args(@_);
-
-    @_ = map { @{$_}{qw(export code)} } @exports;
-    goto &Sub::Inject::sub_inject;
+    require Importer::Zim::Base;
+    Importer::Zim::Base->VERSION('0.12.0');
+    goto &Importer::Zim::Base::import_into;
 }
 
-sub export_to {
-    shift;
-    goto &Sub::Inject::sub_inject;
-}
+sub export_to { shift; goto &Sub::Inject::sub_inject }
 
-no Importer::Zim::Utils qw(DEBUG carp);
+sub _export_to { goto &Sub::Inject::sub_inject }
 
 1;
 
